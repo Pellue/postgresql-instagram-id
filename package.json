@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./lib -d ./dist"
   },
-  "author": "ken <ken@plip.ai>",
+  "author": "ken <geunbaelee@gmail.com>",
   "repository": "Pellue/postgresql-instagram-id",
   "license": "MIT",
   "dependencies": {
