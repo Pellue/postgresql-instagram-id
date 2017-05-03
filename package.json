@@ -14,8 +14,8 @@
     "build": "babel ./lib -d ./dist"
   },
   "author": "ken <ken@plip.ai>",
-  "repository": "plip/postgresql-instagram-id",
-  "license": "ISC",
+  "repository": "Pellue/postgresql-instagram-id",
+  "license": "MIT",
   "dependencies": {
 
   },
