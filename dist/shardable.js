@@ -56,13 +56,11 @@ var Shardable = function () {
 	}, {
 		key: 'setShardPrimaryKey',
 		value: function setShardPrimaryKey(tableName) {
-			var _this = this;
-
 			var owner = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 			var shardId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
 
 			return new _bluebrid2.default(function (resolve, reject) {
-				var user = owner === null ? user = _this.knex.client.config.connection.user : owner;
+				var user = owner === null ? knex.client.config.connection.user : owner;
 
 				var sql = '\n\t\t\tCREATE SEQUENCE ' + tableName + '_id_seq\n\t\t\t  INCREMENT 1\n\t\t\t  MINVALUE 1\n\t\t\t  MAXVALUE 9223372036854775807\n\t\t\t  START 1\n\t\t\t  CACHE 1;\n\t\t\tALTER TABLE ' + tableName + '_id_seq\n\t\t\t  OWNER TO ' + user + ';\n\t\n\t\t\tALTER TABLE ' + tableName + ' ADD CONSTRAINT ' + tableName + '_pkey PRIMARY KEY(id);\n\t\t\tALTER TABLE ' + tableName + ' ALTER COLUMN id SET DEFAULT next_id(\'' + tableName + '_id_seq\'::regclass, ' + shardId + ');\n\t\t\t';
 				knex.raw(sql).then(function (results) {
