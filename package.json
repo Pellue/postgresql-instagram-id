@@ -1,6 +1,6 @@
 {
   "name": "postgresql-instagram-id",
-  "version": "1.0.5",
+  "version": "1.0.13",
   "description": "instagram id for sharding",
   "main": "dist/index.js",
   "keywords": [
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./lib -d ./dist"
+    "build": "babel ./lib -d ./dist",
+    "prepublish": "npm build"
   },
   "author": "ken <geunbaelee@gmail.com>",
   "repository": "Pellue/postgresql-instagram-id",
